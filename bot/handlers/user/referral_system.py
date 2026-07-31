@@ -289,3 +289,16 @@ async def earning_detail_handler(call: CallbackQuery, state: FSMContext):
                                           original_amount=earning_info['original_amount']
                                           ), reply_markup=back(back_data))
     await state.clear()
+@router.message(F.text.in_(["🧲 ادعُ واربح", "🧲 Invite & Earn"]))
+async def referral_text_handler(message: Message, state: FSMContext):
+    """
+    Handle text button press for referral system and show main referral info.
+    """
+    call_mock = CallbackQuery(
+        id="0",
+        from_user=message.from_user,
+        chat_instance="0",
+        message=message,
+        data="referral_system"
+    )
+    await referral_callback_handler(call_mock, state)
