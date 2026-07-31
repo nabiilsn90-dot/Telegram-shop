@@ -219,6 +219,11 @@ def get_payment_choice() -> InlineKeyboardMarkup:
     """
     return simple_buttons(
         [
+            (localize("btn.pay.binance"), "pay_binance"),
+            (localize("btn.pay.cryptomus"), "pay_cryptomus"),
+            (localize("btn.pay.faucetpay"), "pay_faucetpay"),
+            (localize("btn.pay.coinex"), "pay_coinex"),
+            (localize("btn.pay.cwallet"), "pay_cwallet"),
             (localize("btn.pay.crypto"), "pay_cryptopay"),
             (localize("btn.pay.stars"), "pay_stars"),
             (localize("btn.pay.tg"), "pay_fiat"),
